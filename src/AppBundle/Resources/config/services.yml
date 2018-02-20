@@ -1,0 +1,16 @@
+services:
+    periodic_table:
+        class: AppBundle\Service\PeriodicTableUtil
+        arguments: [@doctrine.orm.entity_manager,@security.encoder_factory,@fos_user.user_manager]
+
+    exception_listener:
+        class: AppBundle\EventListener\ExceptionListener
+        arguments: [@logger]
+        tags:
+          - {name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+          - { name: monolog.logger, channel: exception }
+
+    soap_request:
+        class: AppBundle\Service\HandleRequest
+        arguments: [@periodic_table]
+

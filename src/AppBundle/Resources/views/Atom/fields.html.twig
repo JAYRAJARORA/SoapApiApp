@@ -1,0 +1,10 @@
+{% block form_row %}
+    {% spaceless %}
+        {#add form group to every register form field #}
+        <div class="form-group">
+            {{- form_label(form) -}}
+            {{- form_errors(form) -}}
+            {{- form_widget(form) -}}
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}

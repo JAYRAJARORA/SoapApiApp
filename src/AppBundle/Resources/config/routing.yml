@@ -1,0 +1,3 @@
+atom:
+    resource: '@AppBundle/Controller/'
+    type: annotation

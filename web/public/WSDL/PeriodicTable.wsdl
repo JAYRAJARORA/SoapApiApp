@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PeriodicTable"
+                  targetNamespace="http://soapapi.test/WSDL/PeriodicTable.wsdl"
+                  xmlns:tns="http://soapapi.test/WSDL/PeriodicTable.wsdl"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:s="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+                  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:types>
+
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+                    targetNamespace="http://soapapi.test/WSDL/PeriodicTable.wsdl">
+            <xsd:complexType name="credentials">
+                <xsd:sequence>
+                    <xsd:element type="xsd:string" minOccurs="1" name="username"></xsd:element>
+                    <xsd:element type="xsd:string" minOccurs="1" name="password"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="GetElementsResponse">
+                <xsd:sequence>
+                    <xsd:element type="xsd:string" minOccurs="1" maxOccurs="unbounded"
+                                 name="elementName"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="GetAtomicNumberSoapIn">
+        <wsdl:part name="elementName" type="s:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetAtomicNumberSoapOut">
+        <wsdl:part name="atomicNumber" type="s:integer"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetAtomicWeightSoapIn">
+        <wsdl:part name="elementName" type="s:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetAtomicWeightSoapOut">
+        <wsdl:part name="atomicWeight" type="s:decimal"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetElementSymbolSoapIn">
+        <wsdl:part name="elementName" type="s:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetElementSymbolSoapOut">
+        <wsdl:part name="elementSymbol" type="s:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetAtomsSoapIn" />
+    <wsdl:message name="GetAtomsSoapOut">
+        <wsdl:part name="Atoms" type="tns:GetElementsResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="authentication">
+        <wsdl:part name="checkAuth" type="tns:credentials"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="periodictableSoap">
+        <wsdl:operation name="GetAtomicNumber">
+            <wsdl:documentation>Get atomic Number by element name</wsdl:documentation>
+            <wsdl:input message="tns:GetAtomicNumberSoapIn"/>
+            <wsdl:output message="tns:GetAtomicNumberSoapOut"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetAtomicWeight">
+            <wsdl:documentation>Get atomic weight by element name</wsdl:documentation>
+            <wsdl:input message="tns:GetAtomicWeightSoapIn"/>
+            <wsdl:output message="tns:GetAtomicWeightSoapOut"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetElementSymbol">
+            <wsdl:documentation>Get element symbol by element name</wsdl:documentation>
+            <wsdl:input message="tns:GetElementSymbolSoapIn"/>
+            <wsdl:output message="tns:GetElementSymbolSoapOut"/>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetAtoms">
+            <wsdl:documentation>Get List of Atoms</wsdl:documentation>
+            <wsdl:input message="tns:GetAtomsSoapIn"/>
+            <wsdl:output message="tns:GetAtomsSoapOut"/>
+        </wsdl:operation>
+
+    </wsdl:portType>
+    <wsdl:binding name="periodictableSoap" type="tns:periodictableSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetAtomicNumber">
+            <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
+                            style="rpc"/>
+            <wsdl:input>
+                <soap:header message="tns:authentication" part="checkAuth"></soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetAtomicWeight">
+            <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
+                            style="rpc"/>
+            <wsdl:input>
+                <soap:header message="tns:authentication" part="checkAuth"></soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="GetElementSymbol">
+            <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
+                            style="rpc"/>
+            <wsdl:input>
+                <soap:header message="tns:authentication" part="checkAuth"></soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetAtoms">
+            <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
+                            style="rpc"/>
+            <wsdl:input>
+                <soap:header message="tns:authentication" part="checkAuth"></soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="periodictable">
+        <wsdl:port name="periodictableSoap" binding="tns:periodictableSoap">
+            <soap:address location="http://soapapi.test/app_dev.php/soap/atom"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

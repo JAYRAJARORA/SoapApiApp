@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% form_theme form '@App/Atom/fields.html.twig' %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-offset-4 col-md-4">
+                <h2>Periodic Table</h2>
+                <form action="{{ path('createAtom') }}" method="POST">
+                    {{ form_row(form.atomicNumber) }}
+                    {{ form_row(form.elementName) }}
+                    {{ form_row(form.atomicWeight) }}
+                    {{ form_row(form.boilingPoint) }}
+                    {{ form_row(form.symbol) }}
+                    {{ form_row(form.density) }}
+                    {{ form_row(form.meltingPoint) }}
+                    {{ form_rest(form) }}
+                    <button type="submit" class="btn btn-default btn-primary"
+                            name="submit_atom" id="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
