@@ -14,3 +14,9 @@ services:
         class: AppBundle\Service\HandleRequest
         arguments: [@periodic_table]
 
+    validate:
+        class: AppBundle\Service\AtomValidator
+        arguments: [@doctrine.orm.entity_manager]
+    soap_response:
+        class: AppBundle\Service\CreateResponse
+        arguments: []

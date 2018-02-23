@@ -39,4 +39,38 @@ class HandleRequest
         }
         return $response;
     }
+
+
+    public function validateHeader($header)
+    {
+        if (!$header) {
+            throw new \SoapFault(
+                'Client',
+                'Header is required'
+            );
+        }
+        $headerData = $header->getData();
+        $username = $headerData->username;
+        $password = $headerData->password;
+
+        $validateUser = $this->classToHandle
+            ->validateUser($username, $password);
+        if (!$validateUser) {
+            throw new \SoapFault(
+                'Client',
+                'Kindly provide the correct user credentials'
+            );
+        }
+    }
+
+    public function validateElementName($elementName)
+    {
+        if (!$elementName || $elementName === '?') {
+            throw new \SoapFault(
+                'Client',
+                'Element name is required'
+            );
+        }
+    }
+
 }

@@ -86,3 +86,15 @@ monolog:
             type: stream
             path: '%kernel.logs_dir%/Custom/exception.log'
             channels: [exception]
+
+be_simple_soap:
+    cache:
+        type:     disk
+        lifetime: 86400
+        limit:    5
+    services:
+        atom:
+            namespace:     urn:UMARKETCWS
+            binding:       rpc-literal
+            resource:      "@AppBundle/Controller/BeSimpleSoapController.php"
+            resource_type: annotation

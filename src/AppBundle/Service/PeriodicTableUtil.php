@@ -46,9 +46,9 @@ class PeriodicTableUtil
         }
     }
 
-    public function getAtomicNumber($elementName)
+    public function getAtomicNumber($elementName, $flag=0)
     {
-        if (! $this->userIsValid) {
+        if (! $this->userIsValid && !$flag) {
             return new \SoapFault(
                 'Client',
                 'Kindly provide the correct user credentials'
@@ -61,14 +61,14 @@ class PeriodicTableUtil
             )
         );
         if (!$atom) {
-            return new \SoapFault('Server', 'No Atom Object Found');
+            throw new \SoapFault('Server', 'No Atom Object Found');
         }
         return $atom->getAtomicNumber();
     }
 
-    public function getAtoms()
+    public function getAtoms($flag=0)
     {
-        if (! $this->userIsValid) {
+        if (! $this->userIsValid && !$flag) {
             return new \SoapFault(
                 'Client',
                 'Kindly provide the correct user credentials'
@@ -87,9 +87,9 @@ class PeriodicTableUtil
         return $resultAtom;
     }
 
-    public function getAtomicWeight($elementName)
+    public function getAtomicWeight($elementName, $flag=0)
     {
-        if (! $this->userIsValid) {
+        if (! $this->userIsValid && !$flag) {
             return new \SoapFault(
                 'Client',
                 'Kindly provide the correct user credentials'
@@ -108,9 +108,9 @@ class PeriodicTableUtil
     }
 
 
-    public function getElementSymbol($elementName)
+    public function getElementSymbol($elementName, $flag=0)
     {
-        if (! $this->userIsValid) {
+        if (! $this->userIsValid && !$flag) {
             return new \SoapFault(
                 'Client',
                 'Kindly provide the correct user credentials'

@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f31e53b9d0fc5e49a0b3422862afaffe",
-    "content-hash": "70a503211023fa81ef9da2ef4f46373d",
+    "content-hash": "bed1cfacb4f39d7acf53de037b6ec670",
     "packages": [
         {
             "name": "ass/xmlsecurity",
@@ -65,31 +64,40 @@
                 "signature",
                 "xml"
             ],
-            "time": "2015-05-31 10:10:35"
+            "time": "2015-05-31T10:10:35+00:00"
         },
         {
-            "name": "besimple/soap-client",
+            "name": "besimple/soap",
             "version": "v0.2.6",
-            "target-dir": "BeSimple/SoapClient",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BeSimple/BeSimpleSoapClient.git",
-                "reference": "50f186fd3e9fafc4ce2d194d5d18e3987d5fbf41"
+                "url": "https://github.com/BeSimple/BeSimpleSoap.git",
+                "reference": "fb56d51bd8c70ae6d7092f90fd7fec23520477df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/BeSimple/BeSimpleSoapClient/zipball/50f186fd3e9fafc4ce2d194d5d18e3987d5fbf41",
-                "reference": "50f186fd3e9fafc4ce2d194d5d18e3987d5fbf41",
+                "url": "https://api.github.com/repos/BeSimple/BeSimpleSoap/zipball/fb56d51bd8c70ae6d7092f90fd7fec23520477df",
+                "reference": "fb56d51bd8c70ae6d7092f90fd7fec23520477df",
                 "shasum": ""
             },
             "require": {
                 "ass/xmlsecurity": "~1.0",
-                "besimple/soap-common": "0.2.*",
                 "ext-curl": "*",
                 "ext-soap": "*",
-                "php": ">=5.3.0"
+                "php": ">=5.3.0",
+                "symfony/framework-bundle": "~2.0",
+                "symfony/twig-bundle": "~2.0",
+                "zendframework/zend-mime": "2.1.*"
+            },
+            "replace": {
+                "besimple/soap-bundle": "self.version",
+                "besimple/soap-client": "self.version",
+                "besimple/soap-common": "self.version",
+                "besimple/soap-server": "self.version",
+                "besimple/soap-wsdl": "self.version"
             },
             "require-dev": {
+                "ext-mcrypt": "*",
                 "mikey179/vfsstream": "~1.0",
                 "symfony/filesystem": "~2.0",
                 "symfony/process": "~2.3"
@@ -102,7 +110,7 @@
             },
             "autoload": {
                 "psr-0": {
-                    "BeSimple\\SoapClient": ""
+                    "BeSimple\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -123,74 +131,12 @@
                     "email": "francis.besset@gmail.com"
                 }
             ],
-            "description": "Build and consume SOAP Client based web services",
-            "homepage": "https://github.com/BeSimple/BeSimpleSoapClient",
+            "description": "Build and consume SOAP and WSDL based web services",
+            "homepage": "http://besim.pl",
             "keywords": [
-                "soap",
-                "soap-client"
+                "soap"
             ],
-            "time": "2014-08-18 09:45:53"
-        },
-        {
-            "name": "besimple/soap-common",
-            "version": "v0.2.6",
-            "target-dir": "BeSimple/SoapCommon",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/BeSimple/BeSimpleSoapCommon.git",
-                "reference": "08aa78c7f1cae4b23cce5e8928dca7243ca4e4fa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/BeSimple/BeSimpleSoapCommon/zipball/08aa78c7f1cae4b23cce5e8928dca7243ca4e4fa",
-                "reference": "08aa78c7f1cae4b23cce5e8928dca7243ca4e4fa",
-                "shasum": ""
-            },
-            "require": {
-                "ass/xmlsecurity": "~1.0",
-                "ext-soap": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "ext-mcrypt": "*",
-                "mikey179/vfsstream": "~1.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "BeSimple\\SoapCommon": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andreas Schamberger",
-                    "email": "mail@andreass.net"
-                },
-                {
-                    "name": "Christian Kerl",
-                    "email": "christian-kerl@web.de"
-                },
-                {
-                    "name": "Francis Besset",
-                    "email": "francis.besset@gmail.com"
-                }
-            ],
-            "description": "Build and consume SOAP Common based web services",
-            "homepage": "https://github.com/BeSimple/BeSimpleSoapCommon",
-            "keywords": [
-                "soap",
-                "soap-common"
-            ],
-            "time": "2014-08-14 19:40:13"
+            "time": "2015-03-27T15:07:42+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -258,7 +204,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2015-08-31 12:32:49"
+            "time": "2015-08-31T12:32:49+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -328,7 +274,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-12-19 05:03:47"
+            "time": "2015-12-19T05:03:47+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -394,7 +340,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-04-14T22:21:58+00:00"
         },
         {
             "name": "doctrine/common",
@@ -467,7 +413,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-12-25 13:10:16"
+            "time": "2015-12-25T13:10:16+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -538,7 +484,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22 20:44:48"
+            "time": "2017-07-22T20:44:48+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -619,7 +565,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2016-08-10 15:35:22"
+            "time": "2016-08-10T15:35:22+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -707,7 +653,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-10-12 17:23:29"
+            "time": "2017-10-12T17:23:29+00:00"
         },
         {
             "name": "doctrine/doctrine-migrations-bundle",
@@ -768,7 +714,7 @@
                 "migrations",
                 "schema"
             ],
-            "time": "2017-11-01 09:13:26"
+            "time": "2017-11-01T09:13:26+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -835,7 +781,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2015-11-06T14:35:42+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -889,7 +835,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "doctrine/migrations",
@@ -963,7 +909,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2016-12-25 22:54:00"
+            "time": "2016-12-25T22:54:00+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -1036,7 +982,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-08-31 13:19:01"
+            "time": "2015-08-31T13:19:01+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1103,7 +1049,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-08-12 09:53:32"
+            "time": "2016-08-12T09:53:32+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1154,7 +1100,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2015-11-10 17:04:01"
+            "time": "2015-11-10T17:04:01+00:00"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -1196,7 +1142,7 @@
                 "hashing",
                 "password"
             ],
-            "time": "2014-11-20 16:49:30"
+            "time": "2014-11-20T16:49:30+00:00"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1246,7 +1192,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2014-01-12 16:20:24"
+            "time": "2014-01-12T16:20:24+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1324,7 +1270,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19 01:22:40"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "ocramius/package-versions",
@@ -1373,7 +1319,7 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2017-11-24 11:07:03"
+            "time": "2017-11-24T11:07:03+00:00"
         },
         {
             "name": "ocramius/proxy-manager",
@@ -1438,7 +1384,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2016-11-04 15:53:15"
+            "time": "2016-11-04T15:53:15+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1486,7 +1432,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-09-27 21:40:39"
+            "time": "2017-09-27T21:40:39+00:00"
         },
         {
             "name": "psr/log",
@@ -1533,7 +1479,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -1593,7 +1539,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2017-08-25 16:49:47"
+            "time": "2017-08-25T16:49:47+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -1663,7 +1609,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-10-12 17:37:20"
+            "time": "2017-10-12T17:37:20+00:00"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -1707,7 +1653,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2017-03-29 09:29:53"
+            "time": "2017-03-29T09:29:53+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1761,7 +1707,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-05-01 15:54:03"
+            "time": "2017-05-01T15:54:03+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1824,7 +1770,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2017-11-06 16:02:17"
+            "time": "2017-11-06T16:02:17+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -1880,7 +1826,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -1938,7 +1884,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1997,7 +1943,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-php54",
@@ -2055,7 +2001,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-php55",
@@ -2111,7 +2057,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -2167,7 +2113,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -2226,7 +2172,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/polyfill-util",
@@ -2278,7 +2224,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2017-10-11 12:05:26"
+            "time": "2017-10-11T12:05:26+00:00"
         },
         {
             "name": "symfony/security-acl",
@@ -2339,7 +2285,7 @@
             ],
             "description": "Symfony Security Component - ACL (Access Control List)",
             "homepage": "https://symfony.com",
-            "time": "2015-12-28 09:39:09"
+            "time": "2015-12-28T09:39:09+00:00"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2398,7 +2344,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2017-10-19 01:06:41"
+            "time": "2017-10-19T01:06:41+00:00"
         },
         {
             "name": "symfony/symfony",
@@ -2537,7 +2483,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-12-04 22:02:29"
+            "time": "2017-12-04T22:02:29+00:00"
         },
         {
             "name": "twig/twig",
@@ -2602,7 +2548,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-09-27 18:06:46"
+            "time": "2017-09-27T18:06:46+00:00"
         },
         {
             "name": "zendframework/zend-code",
@@ -2655,7 +2601,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2016-10-24 13:23:32"
+            "time": "2016-10-24T13:23:32+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -2709,7 +2655,113 @@
                 "events",
                 "zf2"
             ],
-            "time": "2017-07-11 19:17:22"
+            "time": "2017-07-11T19:17:22+00:00"
+        },
+        {
+            "name": "zendframework/zend-mime",
+            "version": "2.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-mime.git",
+                "reference": "066d6eecff586a7fb10e8907c032beaf1a9d6104"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-mime/zipball/066d6eecff586a7fb10e8907c032beaf1a9d6104",
+                "reference": "066d6eecff586a7fb10e8907c032beaf1a9d6104",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "dev-master",
+                "zendframework/zend-mail": "self.version"
+            },
+            "suggest": {
+                "zendframework/zend-mail": "Zend\\Mail component"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev",
+                    "dev-develop": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Mime\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-mime",
+            "keywords": [
+                "mime",
+                "zf2"
+            ],
+            "time": "2013-04-17T13:32:54+00:00"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "2.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-stdlib.git",
+                "reference": "0027339961ad3d49f91ee092e23f7269c18cb470"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/0027339961ad3d49f91ee092e23f7269c18cb470",
+                "reference": "0027339961ad3d49f91ee092e23f7269c18cb470",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "dev-master",
+                "zendframework/zend-eventmanager": "self.version",
+                "zendframework/zend-filter": "self.version",
+                "zendframework/zend-serializer": "self.version",
+                "zendframework/zend-servicemanager": "self.version"
+            },
+            "suggest": {
+                "pecl-weakref": "Implementation of weak references for Stdlib\\CallbackHandler",
+                "zendframework/zend-eventmanager": "To support aggregate hydrator usage",
+                "zendframework/zend-filter": "To support naming strategy hydrator usage",
+                "zendframework/zend-serializer": "Zend\\Serializer component",
+                "zendframework/zend-servicemanager": "To support hydrator plugin manager usage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev",
+                    "dev-develop": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Stdlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "homepage": "https://github.com/zendframework/zend-stdlib",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2013-04-17T13:32:54+00:00"
         }
     ],
     "packages-dev": [
@@ -2765,7 +2817,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2017-07-18 07:57:44"
+            "time": "2017-07-18T07:57:44+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -2823,7 +2875,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-11-21 09:19:30"
+            "time": "2017-11-21T09:19:30+00:00"
         }
     ],
     "aliases": [],

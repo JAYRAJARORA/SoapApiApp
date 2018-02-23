@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new BeSimple\SoapBundle\BeSimpleSoapBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
