@@ -4,6 +4,7 @@ namespace AppBundle\Service;
 
 use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Doctrine\UserManager;
+use Monolog\Logger;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 
 class PeriodicTableUtil
@@ -12,10 +13,11 @@ class PeriodicTableUtil
     private $userIsValid;
     private $securityEncoder;
     private $fosUserManager;
+    private $logger;
 
-
-    public function __construct(EntityManager $em, EncoderFactory $encoderFactory, UserManager $userManager)
+    public function __construct(EntityManager $em, EncoderFactory $encoderFactory, UserManager $userManager, Logger $logger)
     {
+        $this->logger = $logger;
         $this->em = $em;
         $this->securityEncoder = $encoderFactory;
         $this->fosUserManager = $userManager;
@@ -77,7 +79,7 @@ class PeriodicTableUtil
         $repo = $this->em->getRepository('AppBundle:Atom');
         $atomList = $repo->findAll();
         if (!$atomList) {
-            return new \SoapFault('Server', 'No Atom Object Found');
+            throw new \SoapFault('Server', 'No Atom Object Found');
         }
         $resultAtom = array();
 
@@ -102,7 +104,7 @@ class PeriodicTableUtil
             )
         );
         if (!$atom) {
-            return new \SoapFault('Server', 'No Atom Object Found');
+            throw new \SoapFault('Server', 'No Atom Object Found');
         }
         return $atom->getAtomicWeight();
     }
@@ -126,5 +128,52 @@ class PeriodicTableUtil
             return new \SoapFault('Server', 'No Atom Object Found');
         }
         return $atom->getSymbol();
+    }
+
+    public function handleCData($cdata, $testData)
+    {
+        $cc = simplexml_load_string(trim($cdata));
+        $data = json_decode(json_encode($cc), true);
+        $this->logger->debug(
+            'CDataSection',
+            array($cc->getName() => $data)
+        );
+        $root = 'VerifyAccountReturn';
+        $nodes = array();
+        $nodes['returnCode'] = '1';
+        $nodes['errorCode'] = '';
+        $nodes['subsriberFound'] = '2';
+        $nodes['numContact'] = '121212';
+        $nodes['amount'] = '121';
+        $nodes['currency'] = 'INR';
+        $response = $this->createXml($root, $nodes);
+        return $response;
+    }
+
+    public function createXml($root, $nodes)
+    {
+        $document = new \DOMDocument();
+        $root = $document->appendChild(
+            $document->createElement(
+                $root
+            )
+        );
+        foreach ($nodes as $node => $nodeText) {
+            $resultantNode = $root->appendChild(
+                $document->createElement(
+                    $node
+                )
+            );
+            if ($nodeText) {
+                $resultantNode->appendChild(
+                    $document->createTextNode(
+                        $nodeText
+                    )
+                );
+            }
+        }
+        $response = $document->saveXML();
+
+        return $response;
     }
 }
