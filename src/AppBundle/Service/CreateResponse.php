@@ -3,6 +3,8 @@
 namespace AppBundle\Service;
 
 use AppBundle\Soap\Response\GetAtomicNumberResponse;
+use AppBundle\Soap\Response\GetAtomicWeightResponse;
+use AppBundle\Soap\Response\GetAtomsResponse;
 
 class CreateResponse
 {
@@ -14,4 +16,14 @@ class CreateResponse
         
         return $response;
     }
+
+    public function getAtomicWeightResponse($atomicWeight, $status)
+    {
+        $response = new GetAtomicWeightResponse();
+        $response->setatomicWeight($atomicWeight)
+            ->setStatus($status);
+
+        return $response;
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace AppBundle\Service;
 
 use Doctrine\ORM\EntityManager;
+use AppBundle\Constants\SoapConstants;
 
 class AtomValidator
 {
@@ -22,7 +23,10 @@ class AtomValidator
         $atom = $this->em->getRepository('AppBundle:Atom')
             ->findOneBy(array('elementName'=> $elementName));
         if (!$atom) {
-            throw new \SoapFault('Server', 'No atom found');
+            throw new \SoapFault(
+                SoapConstants::SERVER_FAULT_CODE,
+                SoapConstants::OBJECT_NOT_FOUND
+            );
         }
         return $atom->getAtomicNumber();
     }

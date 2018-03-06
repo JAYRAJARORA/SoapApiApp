@@ -3,19 +3,22 @@
 namespace AppBundle\Service;
 
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Constants\SoapConstants;
 
 class HandleRequest
 {
     private $classToHandle;
+
+    /**
+     * HandleRequest constructor.
+     * @param PeriodicTableUtil $periodicTableUtil
+     */
     public function __construct(PeriodicTableUtil $periodicTableUtil)
     {
         $this->classToHandle = $periodicTableUtil;
     }
 
     /**
-     * Handle the incoming soap requests coming from the client
-     * @param $classname
-     * @param $url
      * @return Response
      */
     public function handleRequest()
@@ -23,13 +26,13 @@ class HandleRequest
         try {
             ini_set("soap.wsdl_cache_enabled", "0");
             $server = new \SoapServer(
-                'http://soapapi.test/public/WSDL/PeriodicTable.wsdl'
+                SoapConstants::WSDL
             );
             $server->setObject($this->classToHandle);
             $response = new Response();
             $response->headers->set(
-                'Content-Type',
-                'text/xml; charset=ISO-8859-1'
+                SoapConstants::CONTENT_TPYE,
+                SoapConstants::XML_CONTENT_VALUE
             );
             ob_start();
             $server->handle();
@@ -40,13 +43,16 @@ class HandleRequest
         return $response;
     }
 
-
+    /**
+     * @param $header
+     * @throws \SoapFault
+     */
     public function validateHeader($header)
     {
         if (!$header) {
             throw new \SoapFault(
-                'Client',
-                'Header is required'
+                SoapConstants::CLIENT_FAULT_CODE,
+                SoapConstants::HEADER_REQUIRED
             );
         }
         $headerData = $header->getData();
@@ -57,20 +63,23 @@ class HandleRequest
             ->validateUser($username, $password);
         if (!$validateUser) {
             throw new \SoapFault(
-                'Client',
-                'Kindly provide the correct user credentials'
+                SoapConstants::CLIENT_FAULT_CODE,
+                SoapConstants::AUTHENTICATION_ERROR
             );
         }
     }
 
+    /**
+     * @param $elementName
+     * @throws \SoapFault
+     */
     public function validateElementName($elementName)
     {
         if (!$elementName || $elementName === '?') {
             throw new \SoapFault(
-                'Client',
-                'Element name is required'
+                SoapConstants::CLIENT_FAULT_CODE,
+                SoapConstants::ELEMENT_REQUIRED
             );
         }
     }
-
 }

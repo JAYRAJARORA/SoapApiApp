@@ -1,8 +1,9 @@
 services:
     periodic_table:
         class: AppBundle\Service\PeriodicTableUtil
-        arguments: [@doctrine.orm.entity_manager,@security.encoder_factory,@fos_user.user_manager]
-
+        arguments: [@doctrine.orm.entity_manager,@security.encoder_factory,@fos_user.user_manager,@logger]
+        tags:
+          - { name: monolog.logger, channel: cData }
     exception_listener:
         class: AppBundle\EventListener\ExceptionListener
         arguments: [@logger]

@@ -6,6 +6,8 @@ use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Doctrine\UserManager;
 use Monolog\Logger;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
+use AppBundle\Util\DomUtil;
+use AppBundle\Util\AtomUtil;
 
 class PeriodicTableUtil
 {
@@ -15,14 +17,28 @@ class PeriodicTableUtil
     private $fosUserManager;
     private $logger;
 
-    public function __construct(EntityManager $em, EncoderFactory $encoderFactory, UserManager $userManager, Logger $logger)
-    {
+    /**
+     * PeriodicTableUtil constructor.
+     * @param EntityManager $em
+     * @param EncoderFactory $encoderFactory
+     * @param UserManager $userManager
+     * @param Logger $logger
+     */
+    public function __construct(
+        EntityManager $em,
+        EncoderFactory $encoderFactory,
+        UserManager $userManager,
+        Logger $logger
+    ) {
         $this->logger = $logger;
         $this->em = $em;
         $this->securityEncoder = $encoderFactory;
         $this->fosUserManager = $userManager;
     }
 
+    /**
+     * @param $header
+     */
     public function checkAuth($header)
     {
         if ((isset($header->username)) && (isset($header->password))) {
@@ -32,6 +48,11 @@ class PeriodicTableUtil
         }
     }
 
+    /**
+     * @param $username
+     * @param $password
+     * @return bool
+     */
     public function validateUser($username, $password)
     {
         $user = $this->fosUserManager->findUserByUsername($username);
@@ -41,46 +62,49 @@ class PeriodicTableUtil
         $encoder = $this->securityEncoder->getEncoder($user);
         $salt = $user->getSalt();
 
-        if ($encoder->isPasswordValid($user->getPassword(), $password, $salt)) {
+        if ($encoder->isPasswordValid(
+            $user->getPassword(),
+            $password,
+            $salt
+        )) {
             return true;
         } else {
             return false;
         }
     }
 
-    public function getAtomicNumber($elementName, $flag=0)
+    /**
+     * @param $elementName
+     * @param int $flag
+     * @return mixed
+     * @throws \SoapFault
+     */
+    public function getAtomicNumber($elementName, $flag = 0)
     {
-        if (! $this->userIsValid && !$flag) {
-            return new \SoapFault(
-                'Client',
-                'Kindly provide the correct user credentials'
-            );
-        }
+        AtomUtil::isUserValid($this->userIsValid, $flag);
+
         $repo = $this->em->getRepository('AppBundle:Atom');
         $atom = $repo->findOneBy(
             array(
             'elementName' => $elementName
             )
         );
-        if (!$atom) {
-            throw new \SoapFault('Server', 'No Atom Object Found');
-        }
+        AtomUtil::isAtomExist($atom);
         return $atom->getAtomicNumber();
     }
 
-    public function getAtoms($flag=0)
+    /**
+     * @param int $flag
+     * @return array
+     * @throws \SoapFault
+     */
+    public function getAtoms($flag = 0)
     {
-        if (! $this->userIsValid && !$flag) {
-            return new \SoapFault(
-                'Client',
-                'Kindly provide the correct user credentials'
-            );
-        }
+        AtomUtil::isUserValid($this->userIsValid, $flag);
         $repo = $this->em->getRepository('AppBundle:Atom');
         $atomList = $repo->findAll();
-        if (!$atomList) {
-            throw new \SoapFault('Server', 'No Atom Object Found');
-        }
+
+        AtomUtil::isAtomExist($atomList);
         $resultAtom = array();
 
         foreach ($atomList as $atom) {
@@ -89,47 +113,51 @@ class PeriodicTableUtil
         return $resultAtom;
     }
 
-    public function getAtomicWeight($elementName, $flag=0)
+    /**
+     * @param $elementName
+     * @param int $flag
+     * @return mixed
+     * @throws \SoapFault
+     */
+    public function getAtomicWeight($elementName, $flag = 0)
     {
-        if (! $this->userIsValid && !$flag) {
-            return new \SoapFault(
-                'Client',
-                'Kindly provide the correct user credentials'
-            );
-        }
+        AtomUtil::isUserValid($this->userIsValid, $flag);
         $repo = $this->em->getRepository('AppBundle:Atom');
         $atom = $repo->findOneBy(
             array(
             'elementName' => $elementName
             )
         );
-        if (!$atom) {
-            throw new \SoapFault('Server', 'No Atom Object Found');
-        }
+        AtomUtil::isAtomExist($atom);
+
         return $atom->getAtomicWeight();
     }
 
-
+    /**
+     * @param $elementName
+     * @param int $flag
+     * @return mixed
+     * @throws \SoapFault
+     */
     public function getElementSymbol($elementName, $flag=0)
     {
-        if (! $this->userIsValid && !$flag) {
-            return new \SoapFault(
-                'Client',
-                'Kindly provide the correct user credentials'
-            );
-        }
+        AtomUtil::isUserValid($this->userIsValid, $flag);
         $repo = $this->em->getRepository('AppBundle:Atom');
         $atom = $repo->findOneBy(
             array(
                 'elementName' => $elementName
             )
         );
-        if (!$atom) {
-            return new \SoapFault('Server', 'No Atom Object Found');
-        }
+        AtomUtil::isAtomExist($atom);
+
         return $atom->getSymbol();
     }
 
+    /**
+     * @param $cdata
+     * @param $testData
+     * @return string
+     */
     public function handleCData($cdata, $testData)
     {
         $cc = simplexml_load_string(trim($cdata));
@@ -146,34 +174,7 @@ class PeriodicTableUtil
         $nodes['numContact'] = '121212';
         $nodes['amount'] = '121';
         $nodes['currency'] = 'INR';
-        $response = $this->createXml($root, $nodes);
-        return $response;
-    }
-
-    public function createXml($root, $nodes)
-    {
-        $document = new \DOMDocument();
-        $root = $document->appendChild(
-            $document->createElement(
-                $root
-            )
-        );
-        foreach ($nodes as $node => $nodeText) {
-            $resultantNode = $root->appendChild(
-                $document->createElement(
-                    $node
-                )
-            );
-            if ($nodeText) {
-                $resultantNode->appendChild(
-                    $document->createTextNode(
-                        $nodeText
-                    )
-                );
-            }
-        }
-        $response = $document->saveXML();
-
+        $response = DomUtil::createXml($root, $nodes);
         return $response;
     }
 }

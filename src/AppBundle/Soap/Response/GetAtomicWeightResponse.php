@@ -5,17 +5,17 @@ namespace AppBundle\Soap\Response;
 use BeSimple\SoapBundle\ServiceDefinition\Annotation as Soap;
 
 /**
- * Class GetAtomicNumber
+ * Class GetatomicWeight
  * @package AppBundle\Soap\Response
- * @Soap\Alias("getAtomicNumberResponse")
+ * @Soap\Alias("getAtomicWeightResponse")
  */
-class GetAtomicNumberResponse
+class GetAtomicWeightResponse
 {
     /**
-     * @var string $atomicNumber
-     * @Soap\ComplexType("int")
+     * @var string $atomicWeight
+     * @Soap\ComplexType("string")
      */
-    private $atomicNumber;
+    private $atomicWeight;
 
     /**
      * @var string $status
@@ -26,18 +26,18 @@ class GetAtomicNumberResponse
     /**
      * @return string
      */
-    public function getatomicNumber()
+    public function getatomicWeight()
     {
-        return $this->atomicNumber;
+        return $this->atomicWeight;
     }
 
     /**
-     * @param string $atomicNumber
-     * @return GetAtomicNumberResponse
+     * @param string $atomicWeight
+     * @return GetatomicWeightResponse
      */
-    public function setatomicNumber($atomicNumber)
+    public function setatomicWeight($atomicWeight)
     {
-        $this->atomicNumber = $atomicNumber;
+        $this->atomicWeight = $atomicWeight;
 
         return $this;
     }
