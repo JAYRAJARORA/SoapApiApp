@@ -87,6 +87,12 @@ monolog:
             path: '%kernel.logs_dir%/Custom/exception.log'
             channels: [exception]
 
+        cDataLog:
+            level: debug
+            type: stream
+            path: '%kernel.logs_dir%/Custom/cData.log'
+            channels: [cData]
+
 be_simple_soap:
     cache:
         type:     disk

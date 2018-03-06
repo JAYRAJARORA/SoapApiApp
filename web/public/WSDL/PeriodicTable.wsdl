@@ -48,6 +48,13 @@
     <wsdl:message name="GetAtomsSoapOut">
         <wsdl:part name="Atoms" type="tns:GetElementsResponse"></wsdl:part>
     </wsdl:message>
+    <wsdl:message name="HandleCDataSectionRequest">
+        <wsdl:part name="simpleXMLData" type="s:string"></wsdl:part>
+        <wsdl:part name="testData" type="s:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="HandleCDataSectionResponse">
+        <wsdl:part name="simpleXMLData" type="s:string"></wsdl:part>
+    </wsdl:message>
     <wsdl:message name="authentication">
         <wsdl:part name="checkAuth" type="tns:credentials"></wsdl:part>
     </wsdl:message>
@@ -76,6 +83,11 @@
             <wsdl:output message="tns:GetAtomsSoapOut"/>
         </wsdl:operation>
 
+        <wsdl:operation name="HandleCData">
+            <wsdl:documentation>Handle Cdata Section in the request</wsdl:documentation>
+            <wsdl:input message="tns:HandleCDataSectionRequest" />
+            <wsdl:output message="tns:HandleCDataSectionResponse" />
+        </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="periodictableSoap" type="tns:periodictableSoap">
         <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -114,6 +126,17 @@
         </wsdl:operation>
 
         <wsdl:operation name="GetAtoms">
+            <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
+                            style="rpc"/>
+            <wsdl:input>
+                <soap:header message="tns:authentication" part="checkAuth"></soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="HandleCData">
             <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
                             style="rpc"/>
             <wsdl:input>

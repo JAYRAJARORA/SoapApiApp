@@ -1,8 +1,9 @@
 <?php
+use AppBundle\Constants\SoapConstants;
 
 try {
     $client = new \SoapClient(
-        'http://soapapi.test/public/WSDL/PeriodicTable.wsdl',
+        SoapConstants::WSDL,
         array('trace' => 1,
             'cache_wsdl' => WSDL_CACHE_NONE
         )
@@ -21,6 +22,7 @@ try {
         'GetAtomicNumber',
         array('elementName' => 'Chromium')
     );
+    var_dump($client->__getFunctions());
     var_dump($response);
     var_dump($client->__getLastRequest());
 } catch (\Exception $e) {

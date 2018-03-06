@@ -32,16 +32,18 @@ try {
     $xml .= $document->saveXML();
 
     $xml .= ']]>';
-    $final = '<simpleXMLData>'.$xml.'</simpleXMLData>';
-    $test = new SoapVar($final, XSD_ANYXML);
-    var_dump($test);
+    $test =             new SoapVar(
+        $xml,
+        XSD_ANYXML
+    );
+    $param = new SoapVar([$test], SOAP_ENC_OBJECT);
     $client->__setSoapHeaders($header);
     $response = $client->__soapCall(
         'HandleCData',
-        array(new SoapVar($final, XSD_ANYXML))
+        ['simpleXMLData'=>$param]
     );
-    var_dump($client->__getFunctions());
     var_dump($response);
+    echo "\n============Request=============\n";
     var_dump($client->__getLastRequest());
 } catch (\Exception $e) {
     echo $e;
