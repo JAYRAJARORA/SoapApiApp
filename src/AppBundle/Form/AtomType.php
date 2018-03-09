@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use AppBundle\Constants\SoapConstants;
 
 class AtomType extends AbstractType
 {
@@ -22,64 +23,64 @@ class AtomType extends AbstractType
         $builder->add(
           'atomicNumber',IntegerType::class,
           array(
-              'label' => 'Atomic Number',
-              'attr' => array(
-                  'placeholder' => 'Enter Atomic Number',
-                  'class'=> 'form-control'
+              SoapConstants::ATOM_FORM_LABEL => 'Atomic Number',
+              SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                  SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Atomic Number',
+                  SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
               )
           )
         )->add(
           'atomicWeight', NumberType::class,
             array(
-                'label' => 'Atomic Weight',
-                'attr' => array(
-                    'placeholder' => 'Enter Atomic Weight',
-                    'class'=> 'form-control'
+                SoapConstants::ATOM_FORM_LABEL => 'Atomic Weight',
+                SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                    SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Atomic Weight',
+                    SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
                 )
             )
         )->add(
             'elementName', TextType::class,
             array(
-                'label' => 'Element Name',
-                'attr' => array(
-                    'placeholder' => 'Enter Element Name',
-                    'class'=> 'form-control'
+                SoapConstants::ATOM_FORM_LABEL => 'Element Name',
+                SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                    SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Element Name',
+                    SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
                 )
             )
         )->add(
             'symbol', TextType::class,
             array(
-                'label' => 'Symbol',
-                'attr' => array(
-                    'placeholder' => 'Enter Element symbol',
-                    'class'=> 'form-control'
+                SoapConstants::ATOM_FORM_LABEL => 'Symbol',
+                SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                    SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Element symbol',
+                     SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
                 )
             )
         )->add(
             'boilingPoint', NumberType::class,
             array(
-                'label' => 'Boiling Point',
-                'attr' => array(
-                    'placeholder' => 'Enter Boiling Point',
-                    'class'=> 'form-control'
+                SoapConstants::ATOM_FORM_LABEL => 'Boiling Point',
+                SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                    SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Boiling Point',
+                    SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
                 )
             )
         )->add(
             'meltingPoint', NumberType::class,
             array(
-                'label' => 'Melting Point',
-                'attr' => array(
-                    'placeholder' => 'Enter Melting Point',
-                    'class'=> 'form-control'
+                SoapConstants::ATOM_FORM_LABEL => 'Melting Point',
+                SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                    SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Melting Point',
+                    SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
                 )
             )
         )->add(
             'density',IntegerType::class,
             array(
-                'label' => 'Density',
-                'attr' => array(
-                    'placeholder' => 'Enter Density',
-                    'class'=> 'form-control'
+                SoapConstants::ATOM_FORM_LABEL => 'Density',
+                SoapConstants::ATOM_FORM_ATTRIBUTE => array(
+                    SoapConstants::ATOM_FORM_PLACEHOLDER => 'Enter Density',
+                    SoapConstants::ATOM_FORM_CLASS => SoapConstants::ATOM_FORM_FORM_CONTROL
                 )
             )
         );

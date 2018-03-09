@@ -21,7 +21,7 @@ class HandleRequest
     /**
      * @return Response
      */
-    public function handleRequest()
+    public function serveRequest()
     {
         try {
             ini_set("soap.wsdl_cache_enabled", "0");

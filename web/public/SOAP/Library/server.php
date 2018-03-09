@@ -23,9 +23,11 @@ function bookYear($book)
         ['name'=>'test 3','year'=>2013],
     ];
     // search book by name
-    foreach ($_books as $bk)
-        if ($bk['name']==$book->name)
+    foreach ($_books as $bk) {
+        if ($bk['name'] == $book->name) {
             return $bk['year']; // book found
+        }
+    }
 
     return 0; // book not found
 }

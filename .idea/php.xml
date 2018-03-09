@@ -49,6 +49,10 @@
       <path value="$PROJECT_DIR$/vendor/besimple/soap" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-stdlib" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-mime" />
+      <path value="$PROJECT_DIR$/vendor/wingu/reflection" />
+      <path value="$PROJECT_DIR$/vendor/php2wsdl/php2wsdl" />
+      <path value="$PROJECT_DIR$/vendor/wsdl2phpgenerator/wsdl2phpgenerator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7" />

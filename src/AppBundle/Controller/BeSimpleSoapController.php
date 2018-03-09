@@ -6,6 +6,7 @@ use AppBundle\Soap\Request\GetAtomicNumberRequest;
 use AppBundle\Soap\Request\GetAtomicWeightRequest;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use BeSimple\SoapBundle\ServiceDefinition\Annotation as Soap;
+use AppBundle\Constants\SoapConstants;
 
 /**
  * @Soap\Header("checkAuth", phpType="AppBundle\Soap\Header\CheckAuthHeader")
@@ -27,17 +28,16 @@ class BeSimpleSoapController extends Controller
     {
         $header = $this->container->get("request")
             ->getSoapHeaders()->get('checkAuth');
-        $this->get('soap_request')->validateHeader($header);
+        $this->get(SoapConstants::SOAP_REQUEST)->validateHeader($header);
 
         $elementName = $getAtomicNumberRequest->getElementName();
-        $this->get('soap_request')->validateElementName($elementName);
+        $this->get(SoapConstants::SOAP_REQUEST)->validateElementName($elementName);
         $atomicNumber = $this->get('periodic_table')
             ->getAtomicNumber($elementName, 1);
         $status = 'Atom found with element '. $elementName;
-        $response = $this->get('soap_response')
-            ->getAtomicNumberResponse($atomicNumber, $status);
 
-        return $response;
+        return $this->get('soap_response')
+            ->getAtomicNumberResponse($atomicNumber, $status);
     }
 
     /**
@@ -54,16 +54,15 @@ class BeSimpleSoapController extends Controller
         $header = $this->container->get("request")
             ->getSoapHeaders()->get('checkAuth');
 
-        $this->get('soap_request')->validateHeader($header);
+        $this->get(SoapConstants::SOAP_REQUEST)->validateHeader($header);
 
         $elementName = $getAtomicWeightRequest->getElementName();
-        $this->get('soap_request')->validateElementName($elementName);
+        $this->get(SoapConstants::SOAP_REQUEST)->validateElementName($elementName);
         $atomicWeight = $this->get('periodic_table')
             ->getAtomicWeight($elementName, 1);
         $status = 'Atom found with element '. $elementName;
-        $response = $this->get('soap_response')
-            ->getAtomicWeightResponse($atomicWeight, $status);
 
-        return $response;
+        return $this->get('soap_response')
+            ->getAtomicWeightResponse($atomicWeight, $status);
     }
 }

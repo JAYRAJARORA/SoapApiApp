@@ -2,6 +2,7 @@
 
 namespace AppBundle\Service;
 
+use AppBundle\Constants\SoapConstants;
 use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Doctrine\UserManager;
 use Monolog\Logger;
@@ -41,10 +42,11 @@ class PeriodicTableUtil
      */
     public function checkAuth($header)
     {
-        if ((isset($header->username)) && (isset($header->password))) {
-            if ($this->validateUser($header->username, $header->password)) {
+        if ((isset($header->username))
+            && (isset($header->password))
+            && $this->validateUser($header->username, $header->password)
+        ) {
                 $this->userIsValid = true;
-            }
         }
     }
 
@@ -62,15 +64,11 @@ class PeriodicTableUtil
         $encoder = $this->securityEncoder->getEncoder($user);
         $salt = $user->getSalt();
 
-        if ($encoder->isPasswordValid(
+        return $encoder->isPasswordValid(
             $user->getPassword(),
             $password,
             $salt
-        )) {
-            return true;
-        } else {
-            return false;
-        }
+        );
     }
 
     /**
@@ -83,10 +81,10 @@ class PeriodicTableUtil
     {
         AtomUtil::isUserValid($this->userIsValid, $flag);
 
-        $repo = $this->em->getRepository('AppBundle:Atom');
+        $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
         $atom = $repo->findOneBy(
             array(
-            'elementName' => $elementName
+            SoapConstants::ELEMENT_NAME => $elementName
             )
         );
         AtomUtil::isAtomExist($atom);
@@ -101,7 +99,7 @@ class PeriodicTableUtil
     public function getAtoms($flag = 0)
     {
         AtomUtil::isUserValid($this->userIsValid, $flag);
-        $repo = $this->em->getRepository('AppBundle:Atom');
+        $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
         $atomList = $repo->findAll();
 
         AtomUtil::isAtomExist($atomList);
@@ -122,10 +120,10 @@ class PeriodicTableUtil
     public function getAtomicWeight($elementName, $flag = 0)
     {
         AtomUtil::isUserValid($this->userIsValid, $flag);
-        $repo = $this->em->getRepository('AppBundle:Atom');
+        $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
         $atom = $repo->findOneBy(
             array(
-            'elementName' => $elementName
+            SoapConstants::ELEMENT_NAME => $elementName
             )
         );
         AtomUtil::isAtomExist($atom);
@@ -142,10 +140,10 @@ class PeriodicTableUtil
     public function getElementSymbol($elementName, $flag=0)
     {
         AtomUtil::isUserValid($this->userIsValid, $flag);
-        $repo = $this->em->getRepository('AppBundle:Atom');
+        $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
         $atom = $repo->findOneBy(
             array(
-                'elementName' => $elementName
+                SoapConstants::ELEMENT_NAME => $elementName
             )
         );
         AtomUtil::isAtomExist($atom);
@@ -158,7 +156,7 @@ class PeriodicTableUtil
      * @param $testData
      * @return string
      */
-    public function handleCData($cdata, $testData)
+    public function handleCData($cdata)
     {
         $cc = simplexml_load_string(trim($cdata));
         $data = json_decode(json_encode($cc), true);
@@ -174,7 +172,6 @@ class PeriodicTableUtil
         $nodes['numContact'] = '121212';
         $nodes['amount'] = '121';
         $nodes['currency'] = 'INR';
-        $response = DomUtil::createXml($root, $nodes);
-        return $response;
+        return DomUtil::createXml($root, $nodes);
     }
 }

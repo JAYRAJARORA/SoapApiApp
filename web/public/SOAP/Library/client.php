@@ -15,7 +15,8 @@ $book->name ='test 2';
 try {
     $client = new SoapClient(
         'http://soapapi.test/public/WSDL/test.wsdl',
-        ['trace' => 1, 'cache_wsdl' => WSDL_CACHE_NONE]);
+        array('trace' => 1, 'cache_wsdl' => WSDL_CACHE_NONE)
+    );
     var_dump($client->__getFunctions());
     $resp = $client->__soapCall('bookYear', array($book));
 // dump response

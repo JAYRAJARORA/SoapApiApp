@@ -26,8 +26,6 @@ class DomUtil
                 );
             }
         }
-        $response = $document->saveXML();
-
-        return $response;
+        return $document->saveXML();
     }
 }

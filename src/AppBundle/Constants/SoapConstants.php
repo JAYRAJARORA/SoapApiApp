@@ -15,4 +15,12 @@ class SoapConstants
     const WSDL = 'http://soapapi.test/public/WSDL/PeriodicTable.wsdl';
     const CONTENT_TPYE = 'Content-Type';
     const XML_CONTENT_VALUE = 'text/xml; charset=ISO-8859-1';
+    const SOAP_REQUEST = 'soap_request';
+    const ATOM_FORM_LABEL = 'label';
+    const ATOM_FORM_PLACEHOLDER = 'placeholder';
+    const ATOM_FORM_CLASS = 'class';
+    const ATOM_FORM_ATTRIBUTE = 'attr';
+    const ATOM_FORM_FORM_CONTROL = 'form-control';
+    const ATOM_REPOSITORY = 'AppBundle:Atom';
+    const ELEMENT_NAME = 'elementName';
 }

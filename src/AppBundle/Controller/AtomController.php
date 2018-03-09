@@ -54,8 +54,7 @@ class AtomController extends Controller
                 SoapConstants::ACCESS_DENIED_TO_URL
             );
         }
-        $response = $this->get('soap_request')->handleRequest();
 
-        return $response;
+        return $this->get('soap_request')->serveRequest();
     }
 }
