@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="2" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9a97b652-aefe-428c-993b-fcc821cce72b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SoapApis.iml" afterPath="$PROJECT_DIR$/.idea/SoapApis.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
+      <change beforePath="$PROJECT_DIR$/.scannerwork/report-task.txt" afterPath="$PROJECT_DIR$/.scannerwork/report-task.txt" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Constants/SoapConstants.php" afterPath="$PROJECT_DIR$/src/AppBundle/Constants/SoapConstants.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AtomController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AtomController.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Atom.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Atom.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/EventListener/ExceptionListener.php" afterPath="$PROJECT_DIR$/src/AppBundle/EventListener/ExceptionListener.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/AtomType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/AtomType.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Atom/create.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Atom/create.html.twig" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/CreateResponse.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/CreateResponse.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/HandleRequest.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/HandleRequest.php" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTableUtil.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTableUtil.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTable.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTable.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Service/Validator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Validator.php" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Util/AtomUtil.php" afterPath="$PROJECT_DIR$/src/AppBundle/Util/AtomUtil.php" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Util/DomUtil.php" afterPath="$PROJECT_DIR$/src/AppBundle/Util/DomUtil.php" />
+      <change beforePath="$PROJECT_DIR$/web/public/PHP2WSDL/AddNumber.php" afterPath="$PROJECT_DIR$/web/public/PHP2WSDL/AddNumber.php" />
+      <change beforePath="$PROJECT_DIR$/web/public/PHP2WSDL/wsdlGenerator.php" afterPath="$PROJECT_DIR$/web/public/PHP2WSDL/wsdlGenerator.php" />
+      <change beforePath="$PROJECT_DIR$/web/public/SOAP/Holiday/Holiday.php" afterPath="$PROJECT_DIR$/web/public/SOAP/Holiday/Holiday.php" />
       <change beforePath="$PROJECT_DIR$/web/public/SOAP/Library/client.php" afterPath="$PROJECT_DIR$/web/public/SOAP/Library/client.php" />
       <change beforePath="$PROJECT_DIR$/web/public/SOAP/Library/server.php" afterPath="$PROJECT_DIR$/web/public/SOAP/Library/server.php" />
-      <change beforePath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicNumber.php" afterPath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicNumber.php" />
-      <change beforePath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicWeight.php" afterPath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicWeight.php" />
-      <change beforePath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtoms.php" afterPath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtoms.php" />
-      <change beforePath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetElementSymbol.php" afterPath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetElementSymbol.php" />
-      <change beforePath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/HandleCdata.php" afterPath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/HandleCdata.php" />
-      <change beforePath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/TestHandleCdata.php" afterPath="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/TestHandleCdata.php" />
+      <change beforePath="$PROJECT_DIR$/web/public/SOAP/Weather/WeatherClient.php" afterPath="$PROJECT_DIR$/web/public/SOAP/Weather/WeatherClient.php" />
+      <change beforePath="$PROJECT_DIR$/web/public/WSDL/PeriodicTable.wsdl" afterPath="$PROJECT_DIR$/web/public/WSDL/PeriodicTable.wsdl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,27 +57,31 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BeSimpleSoapController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1147">
+              <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>periodictableHttpGet</find>
-      <find>GetAtomsResult</find>
-      <find>soap</find>
-      <find>GetAtomsRequest</find>
-      <find>GetAtomsResponse</find>
-      <find>GetAtoms</find>
-      <find>abcde</find>
-      <find>MessageHeaderType</find>
-      <find>message</find>
-      <find>atomicNum</find>
-      <find>CheckAuth</find>
-      <find>username</find>
-      <find>checkauth</find>
-      <find>checkAuth</find>
-      <find>use</find>
-      <find>document</find>
-      <find>GetAtomsSoapIn</find>
       <find>GetElementsResponse</find>
       <find>authentication</find>
       <find>header</find>
@@ -78,12 +91,36 @@
       <find>AppB</find>
       <find>element</find>
       <find>elementName</find>
+      <find>WSDL</find>
+      <find>GetAtomDetailsSoapOut</find>
+      <find>GetAtomDetailsSoapIn</find>
+      <find>Response</find>
+      <find>entity</find>
+      <find>getSoapHeader</find>
+      <find>get</find>
+      <find>getHeaders()</find>
+      <find>Logger</find>
+      <find>user</find>
+      <find>flag</find>
+      <find>boilingPoint</find>
+      <find>logger</find>
+      <find>val</find>
+      <find>var</find>
+      <find>var_dump</find>
+      <find>appr</find>
+      <find>reques</find>
+      <find>req</find>
+      <find>request</find>
+      <find>handleCData</find>
     </findStrings>
     <replaceStrings>
       <replace>atomicNumber</replace>
+      <replace>print_r</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/vendor/besimple/soap/src/BeSimple</dir>
+      <dir>$PROJECT_DIR$/vendor/besimple/soap/src/BeSimple/SoapBundle/Soap</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -92,57 +129,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Client/GetAtomicNumberClient.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomicNumberResponse.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Header/CheckAuth.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Header/CheckAuthHeader.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/ValidateHeader.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Request/GetAtomicNumberRequest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Request/GetAtomicWeightRequest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Request/GetAtoms.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomsResponse.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/CreateResponse.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/web/public/WSDL/PeriodicTable.wsdl" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/AtomValidator.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Util/AtomUtil.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomicWeightResponse.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/AtomType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/HandleRequest.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AtomController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Constants/SoapConstants.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTableUtil.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Util/DomUtil.php" />
-        <option value="$PROJECT_DIR$/sonar-project.properties" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/Library/client.php" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/web/public/env.yml" />
-        <option value="$PROJECT_DIR$/web/public/env.yml.dist" />
-        <option value="$PROJECT_DIR$/web/public/periodicTable.env.dist" />
-        <option value="$PROJECT_DIR$/web/public/periodicTable.env" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-        <option value="$PROJECT_DIR$/web/public/PHP2WSDL/AddNumber.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/Library/server.php" />
-        <option value="$PROJECT_DIR$/web/public/.env" />
-        <option value="$PROJECT_DIR$/web/public/environment.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/CreateCData.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetElementSymbol.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicNumber.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicWeight.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtoms.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/TestHandleCdata.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/HandleCdata.php" />
-        <option value="$PROJECT_DIR$/web/public/PHP2WSDL/wsdlGenerator.php" />
-        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/SOAPClient.php" />
         <option value="$PROJECT_DIR$/environment.php" />
         <option value="$PROJECT_DIR$/web/public/SOAP/Zend/GenerateWSDL.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTableUtil.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/AtomValidator.php" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/EventListener/ExceptionListener.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Request/GetAtomicWeightRequest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomicWeightResponse.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomicNumberResponse.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Atom/create.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Atom.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/AtomType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Request/GetAtomicNumberRequest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Soap/Header/CheckAuthHeader.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/DomUtil.php" />
+        <option value="$PROJECT_DIR$/web/public/PHP2WSDL/AddNumber.php" />
+        <option value="$PROJECT_DIR$/web/public/PHP2WSDL/wsdlGenerator.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Holiday/Holiday.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/AtomUtil.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Holiday/HolidayService.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Holiday/HolidayServiceCall.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/SOAPClient.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtoms.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicNumber.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetElementSymbol.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/Soap/Header/CheckAuthHeader.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/Soap/Request/GetAtomicNumberRequest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/Soap/Response/GetAtomicWeightResponse.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/Soap/Response/GetAtomicNumberResponse.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Util/Soap/Request/GetAtomicWeightRequest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/CreateResponse.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Library/Book.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicWeight.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Weather/WeatherClient.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Library/client.php" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AtomController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/Library/server.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/HandleRequest.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Constants/SoapConstants.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Validator.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/PeriodicTable.php" />
+        <option value="$PROJECT_DIR$/web/public/WSDL/PeriodicTable.wsdl" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/HandleCdata.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/TestHandleCdata.php" />
+        <option value="$PROJECT_DIR$/web/public/SOAP/PeriodicTable/CreateCData.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php" />
       </list>
     </option>
   </component>
@@ -152,7 +189,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpDebugGeneral" break_at_first_line="true" />
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="soapapi.test" id="c286f321-5789-413a-a590-c866269f78c4" name="Soap" />
@@ -252,6 +289,79 @@
             <path>
               <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
               <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Custom" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Util" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="SoapApis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoapApis" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -280,21 +390,22 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Imp/Projects/CanalPlus" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/AppBundle" />
-      <recent name="$PROJECT_DIR$/web/public/SOAP/PeriodicTable" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Soap/Request" />
-      <recent name="$PROJECT_DIR$/src/AppBundle/Soap/Response" />
-      <recent name="$PROJECT_DIR$/web/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/AppBundle/Util" />
       <recent name="$PROJECT_DIR$/web/public/WSDL" />
       <recent name="$PROJECT_DIR$/web/public/SOAP/Library" />
       <recent name="$PROJECT_DIR$/web/public/SOAP/PeriodicTable" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Util" />
+      <recent name="$PROJECT_DIR$/src/AppBundle" />
+      <recent name="$PROJECT_DIR$/web/public/SOAP/PeriodicTable" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Soap/Request" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Soap/Response" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -357,12 +468,16 @@
       <workItem from="1520336024046" duration="684000" />
       <workItem from="1520424471337" duration="16025000" />
       <workItem from="1520576817627" duration="5153000" />
-      <workItem from="1520584905825" duration="8241000" />
+      <workItem from="1520584905825" duration="8941000" />
+      <workItem from="1520658917949" duration="1943000" />
+      <workItem from="1520677319821" duration="28510000" />
+      <workItem from="1520718872517" duration="1490000" />
+      <workItem from="1520831988155" duration="19471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208406000" />
+    <option name="totallyTimeSpent" value="260520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -375,46 +490,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="-4" width="1319" height="772" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27415553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967638" sideWeight="0.5027494" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7184466" sideWeight="0.49096623" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29300866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980362" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7184466" sideWeight="0.49096623" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.4972506" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967638" sideWeight="0.4972506" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967638" sideWeight="0.5027494" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72977346" sideWeight="0.49096623" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.264729" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980362" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.4972506" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -426,189 +523,408 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/AppBundle/Soap/Header/CheckAuthHeader.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="73" />
+          <url>file://$PROJECT_DIR$/src/AppBundle/Service/PeriodicTable.php</url>
+          <line>171</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="76" />
+      <option name="time" value="83" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/cache/dev/annotations/0b/5b53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c657223676574405b416e6e6f745d5d5b315d.doctrinecache.data" />
-    <entry file="file://$PROJECT_DIR$/app/cache/dev/annotations/0d/5b53796d666f6e795c42756e646c655c4672616d65776f726b42756e646c655c436f6e74726f6c6c65725c436f6e74726f6c6c65722367656e657261746555726c405b416e6e6f745d5d5b315d.doctrinecache.data" />
-    <entry file="file://$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4862" column="0" lean-forward="false" selection-start-line="4862" selection-start-column="0" selection-end-line="4862" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php.meta">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomicNumberResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Soap/Request/GetAtomicNumberRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
-          <caret line="105" column="15" lean-forward="false" selection-start-line="105" selection-start-column="15" selection-end-line="105" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/php2wsdl/php2wsdl/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Soap/Response/GetAtomicWeightResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="34" lean-forward="true" selection-start-line="39" selection-start-column="34" selection-end-line="39" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/CreateResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/php2wsdl/php2wsdl/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Atom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4477">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/WSDL/PeriodicTable.wsdl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-454">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="43" lean-forward="false" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="38" column="18" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AtomType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="82" column="91" lean-forward="false" selection-start-line="82" selection-start-column="91" selection-end-line="82" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Encoder/PasswordEncoderInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/SoapConstants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="39" lean-forward="false" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="455">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sonar-project.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/DomUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/PHP2WSDL/AddNumber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#6#534#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Holiday/Holiday.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/SoapClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicNumber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtoms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetElementSymbol.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="28" column="25" lean-forward="false" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/WSDL/test.wsdl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/WSDL/addNumber.wsdl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/Soap/Request/GetAtomicNumberRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/Soap/Request/GetAtomicWeightRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/Soap/Response/GetAtomicWeightResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/Soap/Response/GetAtomicNumberResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144">
+          <caret line="49" column="15" lean-forward="false" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/CreateResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="36" column="15" lean-forward="false" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="15" />
+          <folding>
+            <element signature="e#553#610#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/Soap/Header/CheckAuthHeader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="17" column="37" lean-forward="true" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Library/client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Weather/WeatherClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicWeight.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Holiday/HolidayClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Holiday/Holiday.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-175">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="15" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/PHP2WSDL/wsdlGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="16" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="85" lean-forward="true" selection-start-line="15" selection-start-column="85" selection-end-line="15" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Library/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Library/server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/AtomUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="26" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/logs/Custom/cData.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-614">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/monolog/monolog/src/Monolog/Handler/AbstractHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/DataCollector/DumpDataCollector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="262" column="0" lean-forward="false" selection-start-line="262" selection-start-column="0" selection-end-line="262" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Debug/ErrorHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="677" column="0" lean-forward="false" selection-start-line="677" selection-start-column="0" selection-end-line="677" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/DependencyInjection/ContainerAwareHttpKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Atom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="79" column="19" lean-forward="false" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/HttpKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/HandleRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Constants/SoapConstants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="45" column="15" lean-forward="false" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/WSDL/PeriodicTable.wsdl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/PeriodicTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="167" column="40" lean-forward="false" selection-start-line="167" selection-start-column="20" selection-end-line="167" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="225" column="63" lean-forward="true" selection-start-line="225" selection-start-column="63" selection-end-line="225" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/TestHandleCdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/HandleCdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="31" column="10" lean-forward="false" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/logs/Custom/exception.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="304">
+          <caret line="151" column="95" lean-forward="false" selection-start-line="151" selection-start-column="83" selection-end-line="151" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-814">
+            <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/CreateCData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AtomController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        <state relative-caret-position="804">
+          <caret line="95" column="47" lean-forward="true" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -620,202 +936,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Library/server.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BeSimpleSoapController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/periodicTable.env.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Holiday/HolidayService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Library/client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Util/DomUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/HandleRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/PeriodicTableUtil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="175" column="5" lean-forward="false" selection-start-line="175" selection-start-column="5" selection-end-line="175" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Holiday/Holiday.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetElementSymbol.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtoms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicWeight.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/GetAtomicNumber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/HandleCdata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/TestHandleCdata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Weather/testSOAP.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/PHP2WSDL/AddNumber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example.wsdl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/PHP2WSDL/wsdlGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/environment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/SOAPClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/PeriodicTable/CreateCData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/public/SOAP/Zend/GenerateWSDL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-1147">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding />
         </state>
       </provider>

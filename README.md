@@ -7,8 +7,9 @@ What's inside?
 --------------
 
 The App contains the Soap Server to handle the request made to the Atom Api and Soap Client to consume 
-Atom API along with other Soap Apis. The Atom api consists of methods to fetch details like Element Name, Atomic Number, Element Symbol, Atom List, etc. The request to the atom details can be handled
-by two ways:
+Atom API along with other Soap Apis. 
+The Atom api consists of methods to fetch details like Element Name, Atomic Number, Element Symbol, Atom List, etc. The request to the atom details can be handled by two ways:
+
 * **SoapServer** : This is the default PHP Server. It handles requests by buffering output
 from the functions or classes set to be handled by the server.  
 * **BeSimpleSoap** : This is a third party library which comes with a feature of 
