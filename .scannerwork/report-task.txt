@@ -2,5 +2,5 @@ projectKey=SoapApis
 serverUrl=http://localhost:9000
 serverVersion=6.7.2.37468
 dashboardUrl=http://localhost:9000/dashboard/index/SoapApis
-ceTaskId=AWIR7QRitKNrA00Ds3Qy
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWIR7QRitKNrA00Ds3Qy
+ceTaskId=AWIZ8evt4YFlZe0HjQH1
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWIZ8evt4YFlZe0HjQH1

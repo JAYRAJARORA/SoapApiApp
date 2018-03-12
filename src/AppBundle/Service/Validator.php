@@ -263,12 +263,10 @@ class Validator
         $this->em->persist($atom);
         $this->em->flush();
 
-        $nodes = array(
+        return  array(
             'StatusMessage' => 'Element Successfully Created',
             'StatusCode' => '201'
         );
-
-        return $nodes;
     }
 
     /**
