@@ -11,12 +11,11 @@
  * or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @category  ExceptionListener
- * @package   ProductBundle
+ * @package   AppBundle
  * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
  * @copyright 1997-2005 The PHP Group
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   SVN: $Id$
- * @link      http://pear.php.net/package/PackageName
  */
 
 namespace AppBundle\EventListener;
@@ -27,18 +26,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 /**
- * Class ResponseForControllerListener Doc Comment
+ * Class ExceptionListener
  *
  * @category ExceptionListener
  * @package  ProductBundle
  * @author   Jayraj Arora <jayraja@mindfiresolutions.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
- * @link     http://pear.php.net/package/PackageName
  */
 class ExceptionListener
 {
     private $logger;
 
+    /**
+     * ExceptionListener constructor.
+     * @param Logger $logger
+     */
     public function __construct(Logger $logger)
     {
         $this->logger = $logger;

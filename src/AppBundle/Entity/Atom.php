@@ -1,14 +1,38 @@
 <?php
-
+/**
+ * Atom Entity for defining elements
+ *
+ * PHP version 7.0.25
+ * LICENSE: This program is distributed in the hope that it
+ * will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * @category  Controller
+ * @package   AppBundle
+ * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
+ * @copyright 1997-2005 The PHP Group
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
+ */
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
- * Atom
+ * Class Atom
+ *
+ * @category Entity
+ * @package  AppBundle
+ * @author   Jayraj Arora <jayraja@mindfiresolutions.com>
+ * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
  * @ORM\Table(name="atom")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AtomRepository")
+ * @ORM\Entity()
+ * @UniqueEntity("atomicNumber")
+ * @UniqueEntity("elementName")
+ * @UniqueEntity("symbol")
  */
 class Atom
 {
@@ -23,21 +47,34 @@ class Atom
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank(message="The atomic Number cant be blank")
+     * @Assert\Regex("/^[0-9].*$/", message="Atomic Number can contain only integers")
      * @ORM\Column(name="atomicNumber", type="integer", unique=true)
      */
     private $atomicNumber;
 
     /**
      * @var string
-     *
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 10,
+     *      minMessage = "Element must be at least 5 characters long",
+     *      maxMessage = "Element name cannot be longer than 10 characters"
+     * )
+     * @Assert\Regex("/^[A-Za-z].*$/", message="Element can contain only alphabets")
      * @ORM\Column(name="elementName", type="string", length=40, unique=true)
      */
     private $elementName;
 
     /**
      * @var string
-     *
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 10,
+     *      minMessage = "Symbol must be at least 2 characters long",
+     *      maxMessage = "Symbol cannot be longer than 10 characters"
+     * )
+     * @Assert\Regex("/^[A-Za-z].*$/", message="Symbol can contain only alphabets")
      * @ORM\Column(name="symbol", type="string", length=10, unique=true)
      */
     private $symbol;
@@ -50,38 +87,9 @@ class Atom
     private $atomicWeight;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="atomicRadius", type="decimal", precision=8, scale=2, nullable=true)
-     */
-    private $atomicRadius;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="meltingPoint", type="decimal", precision=8, scale=2, nullable=true)
-     */
-    private $meltingPoint;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="boilingPoint", type="decimal", precision=8, scale=2, nullable=true)
-     */
-    private $boilingPoint;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="density", type="integer", nullable=true)
-     */
-    private $density;
-
-
-    /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -104,7 +112,7 @@ class Atom
     /**
      * Get atomicNumber
      *
-     * @return integer 
+     * @return integer
      */
     public function getAtomicNumber()
     {
@@ -127,7 +135,7 @@ class Atom
     /**
      * Get elementName
      *
-     * @return string 
+     * @return string
      */
     public function getElementName()
     {
@@ -150,7 +158,7 @@ class Atom
     /**
      * Get symbol
      *
-     * @return string 
+     * @return string
      */
     public function getSymbol()
     {
@@ -173,102 +181,10 @@ class Atom
     /**
      * Get atomicWeight
      *
-     * @return string 
+     * @return string
      */
     public function getAtomicWeight()
     {
         return $this->atomicWeight;
-    }
-
-    /**
-     * Set atomicRadius
-     *
-     * @param string $atomicRadius
-     * @return Atom
-     */
-    public function setAtomicRadius($atomicRadius)
-    {
-        $this->atomicRadius = $atomicRadius;
-
-        return $this;
-    }
-
-    /**
-     * Get atomicRadius
-     *
-     * @return string 
-     */
-    public function getAtomicRadius()
-    {
-        return $this->atomicRadius;
-    }
-
-    /**
-     * Set meltingPoint
-     *
-     * @param string $meltingPoint
-     * @return Atom
-     */
-    public function setMeltingPoint($meltingPoint)
-    {
-        $this->meltingPoint = $meltingPoint;
-
-        return $this;
-    }
-
-    /**
-     * Get meltingPoint
-     *
-     * @return string 
-     */
-    public function getMeltingPoint()
-    {
-        return $this->meltingPoint;
-    }
-
-    /**
-     * Set boilingPoint
-     *
-     * @param string $boilingPoint
-     * @return Atom
-     */
-    public function setBoilingPoint($boilingPoint)
-    {
-        $this->boilingPoint = $boilingPoint;
-
-        return $this;
-    }
-
-    /**
-     * Get boilingPoint
-     *
-     * @return string 
-     */
-    public function getBoilingPoint()
-    {
-        return $this->boilingPoint;
-    }
-
-    /**
-     * Set density
-     *
-     * @param integer $density
-     * @return Atom
-     */
-    public function setDensity($density)
-    {
-        $this->density = $density;
-
-        return $this;
-    }
-
-    /**
-     * Get density
-     *
-     * @return integer 
-     */
-    public function getDensity()
-    {
-        return $this->density;
     }
 }

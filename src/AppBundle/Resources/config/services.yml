@@ -1,7 +1,7 @@
 services:
     periodic_table:
-        class: AppBundle\Service\PeriodicTableUtil
-        arguments: [@doctrine.orm.entity_manager,@security.encoder_factory,@fos_user.user_manager,@logger]
+        class: AppBundle\Service\PeriodicTable
+        arguments: [@doctrine.orm.entity_manager,@logger,@validate]
         tags:
           - { name: monolog.logger, channel: cData }
     exception_listener:
@@ -13,11 +13,11 @@ services:
 
     soap_request:
         class: AppBundle\Service\HandleRequest
-        arguments: [@periodic_table]
+        arguments: [@periodic_table,@logger, @doctrine.orm.entity_manager, @validate]
 
     validate:
-        class: AppBundle\Service\AtomValidator
-        arguments: [@doctrine.orm.entity_manager]
+        class: AppBundle\Service\Validator
+        arguments: [@doctrine.orm.entity_manager,@fos_user.user_manager, @security.encoder_factory]
     soap_response:
         class: AppBundle\Service\CreateResponse
         arguments: []
