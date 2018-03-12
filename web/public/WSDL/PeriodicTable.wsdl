@@ -4,7 +4,6 @@
                   xmlns:tns="http://soapapi.test/WSDL/PeriodicTable.wsdl"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
                   xmlns:s="http://www.w3.org/2001/XMLSchema"
-                  xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
                   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
     <wsdl:types>
@@ -13,8 +12,22 @@
                     targetNamespace="http://soapapi.test/WSDL/PeriodicTable.wsdl">
             <xsd:complexType name="credentials">
                 <xsd:sequence>
-                    <xsd:element type="xsd:string" minOccurs="1" name="username"></xsd:element>
-                    <xsd:element type="xsd:string" minOccurs="1" name="password"></xsd:element>
+                    <xsd:element type="xsd:string" minOccurs="1" name="username">
+                    </xsd:element>
+                    <xsd:element type="xsd:string" minOccurs="1" name="password">
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="GetAtomDetailsResponse">
+                <xsd:sequence>
+                    <xsd:element type="xsd:string" minOccurs="1" name="status">
+                    </xsd:element>
+                    <xsd:element type="xsd:integer" minOccurs="1" name="AtomicNumber">
+                    </xsd:element>
+                    <xsd:element type="xsd:decimal" minOccurs="1" name="AtomicWeight">
+                    </xsd:element>
+                    <xsd:element type="xsd:string" minOccurs="1" name="ElementSymbol">
+                    </xsd:element>
                 </xsd:sequence>
             </xsd:complexType>
             <xsd:complexType name="GetElementsResponse">
@@ -48,9 +61,15 @@
     <wsdl:message name="GetAtomsSoapOut">
         <wsdl:part name="Atoms" type="tns:GetElementsResponse"></wsdl:part>
     </wsdl:message>
+    <wsdl:message name="GetAtomDetailsSoapIn">
+        <wsdl:part name="elementName" type="s:string">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetAtomDetailsSoapOut">
+        <wsdl:part name="AtomDetails" type="tns:GetAtomDetailsResponse"></wsdl:part>
+    </wsdl:message>
     <wsdl:message name="HandleCDataSectionRequest">
         <wsdl:part name="simpleXMLData" type="s:string"></wsdl:part>
-        <wsdl:part name="testData" type="s:string"></wsdl:part>
     </wsdl:message>
     <wsdl:message name="HandleCDataSectionResponse">
         <wsdl:part name="simpleXMLData" type="s:string"></wsdl:part>
@@ -83,10 +102,16 @@
             <wsdl:output message="tns:GetAtomsSoapOut"/>
         </wsdl:operation>
 
-        <wsdl:operation name="HandleCData">
+        <wsdl:operation name="CreateAtomUsingCData">
             <wsdl:documentation>Handle Cdata Section in the request</wsdl:documentation>
             <wsdl:input message="tns:HandleCDataSectionRequest" />
             <wsdl:output message="tns:HandleCDataSectionResponse" />
+        </wsdl:operation>
+
+        <wsdl:operation name="GetAtomDetails">
+            <wsdl:documentation>Get the details of an atom</wsdl:documentation>
+            <wsdl:input message="tns:GetAtomDetailsSoapIn"></wsdl:input>
+            <wsdl:output message="tns:GetAtomDetailsSoapOut"></wsdl:output>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="periodictableSoap" type="tns:periodictableSoap">
@@ -136,7 +161,20 @@
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="HandleCData">
+
+        <wsdl:operation name="GetAtomDetails">
+            <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
+                            style="rpc"/>
+            <wsdl:input>
+                <soap:header message="tns:authentication" part="checkAuth"></soap:header>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="CreateAtomUsingCData">
             <soap:operation soapAction="http://soapapi.test/app_dev.php/soap/atom"
                             style="rpc"/>
             <wsdl:input>

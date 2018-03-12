@@ -1,48 +1,39 @@
 <?php
-// turn off WSDL caching
-ini_set("soap.wsdl_cache_enabled","0");
-
-// model, which uses in web service functions as parameter
-class Book
-{
-    public $name;
-    public $year;
-}
-
 /**
- * Determines published year of the book by name.
- * @param Book $book book instance with name set.
- * @return int published year of the book or 0 if not found.
+ * Soap Server for the book Api
+ * PHP version 7.0.25
+ *
+ * LICENSE: This program is distributed in the hope that it
+ * will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * @category  SoapServer
+ * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
+ * @copyright 1997-2005 The PHP Group
+ * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  */
-function bookYear($book)
-{
-    // list of the books
-    $_books=[
-        ['name'=>'test 1','year'=>2011],
-        ['name'=>'test 2','year'=>2012],
-        ['name'=>'test 3','year'=>2013],
-    ];
-    // search book by name
-    foreach ($_books as $bk) {
-        if ($bk['name'] == $book->name) {
-            return $bk['year']; // book found
-        }
-    }
+require 'Book.php';
 
-    return 0; // book not found
-}
+use Soap\Book\Book as Book;
+
+// turn off WSDL caching
+ini_set("soap.wsdl_cache_enabled", "0");
 
 // initialize SOAP Server
+// 'book' complex type in WSDL file mapped to the Book PHP class
 $server=new SoapServer(
     "http://soapapi.test/public/WSDL/test.wsdl",
-    [
-    'classmap'=>[
-        'book'=>'Book', // 'book' complex type in WSDL file mapped to the Book PHP class
-    ]
-]);
-
+    array(
+        'classmap'=>array(
+            'book'=>Book::class
+            )
+    )
+);
+$book = new Book();
 // register available functions
-$server->addFunction('bookYear');
-
+$server->setObject($book);
+ob_start();
 // start handling requests
 $server->handle();
+print_r(ob_get_clean());

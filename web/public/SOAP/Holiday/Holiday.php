@@ -23,7 +23,7 @@ namespace Soap\Holiday;
  * @author   Jayraj Arora <jayraja@mindfiresolutions.com>
  * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  */
-class HolidayService
+class Holiday
 {
     private $client;
 
