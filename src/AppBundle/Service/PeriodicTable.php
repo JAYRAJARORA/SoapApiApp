@@ -4,9 +4,8 @@ namespace AppBundle\Service;
 
 use AppBundle\Constants\SoapConstants;
 use Doctrine\ORM\EntityManager;
-use FOS\UserBundle\Doctrine\UserManager;
 use Monolog\Logger;
-use Symfony\Component\Security\Core\Encoder\EncoderFactory;
+
 use AppBundle\Util\DomUtil;
 use AppBundle\Util\AtomUtil;
 
@@ -14,27 +13,23 @@ class PeriodicTableUtil
 {
     private $em;
     private $userIsValid;
-    private $securityEncoder;
-    private $fosUserManager;
     private $logger;
+    private $atomValidator;
 
     /**
      * PeriodicTableUtil constructor.
      * @param EntityManager $em
-     * @param EncoderFactory $encoderFactory
-     * @param UserManager $userManager
      * @param Logger $logger
+     * @param AtomValidator $atomValidator
      */
     public function __construct(
         EntityManager $em,
-        EncoderFactory $encoderFactory,
-        UserManager $userManager,
-        Logger $logger
+        Logger $logger,
+        AtomValidator $atomValidator
     ) {
         $this->logger = $logger;
         $this->em = $em;
-        $this->securityEncoder = $encoderFactory;
-        $this->fosUserManager = $userManager;
+        $this->atomValidator = $atomValidator;
     }
 
     /**
@@ -42,35 +37,14 @@ class PeriodicTableUtil
      */
     public function checkAuth($header)
     {
+
         if ((isset($header->username))
             && (isset($header->password))
-            && $this->validateUser($header->username, $header->password)
+            && $this->atomValidator->validateUser($header->username, $header->password)
         ) {
                 $this->userIsValid = true;
         }
     }
-
-    /**
-     * @param $username
-     * @param $password
-     * @return bool
-     */
-    public function validateUser($username, $password)
-    {
-        $user = $this->fosUserManager->findUserByUsername($username);
-        if (!$user) {
-            return false;
-        }
-        $encoder = $this->securityEncoder->getEncoder($user);
-        $salt = $user->getSalt();
-
-        return $encoder->isPasswordValid(
-            $user->getPassword(),
-            $password,
-            $salt
-        );
-    }
-
     /**
      * @param $elementName
      * @param int $flag
@@ -149,6 +123,33 @@ class PeriodicTableUtil
         AtomUtil::isAtomExist($atom);
 
         return $atom->getSymbol();
+    }
+
+
+    /**
+     * @param $elementName
+     * @param int $flag
+     * @return mixed
+     * @throws \SoapFault
+     */
+    public function getAtomDetails($elementName, $flag = 0)
+    {
+        AtomUtil::isUserValid($this->userIsValid, $flag);
+
+        $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
+        $atom = $repo->findOneBy(
+            array(
+                SoapConstants::ELEMENT_NAME => $elementName
+            )
+        );
+        AtomUtil::isAtomExist($atom);
+
+        return array(
+            'status' => 'Element found with name '.$elementName,
+            'AtomicNumber' => $atom->getAtomicNumber(),
+            'AtomicWeight' => $atom->getAtomicWeight(),
+            'ElementSymbol' => $atom->getSymbol()
+        );
     }
 
     /**
