@@ -109,7 +109,7 @@ class Validator
             );
         }
 
-        return true;
+        return $username;
     }
 
     /**
@@ -226,7 +226,6 @@ class Validator
      * Handle CData request coming from the  Create Atom method
      * @param $data
      * @return array
-     * @throws \Doctrine\ORM\OptimisticLockException
      * @throws \SoapFault
      */
     public function handleCreateAtomRequest($data)

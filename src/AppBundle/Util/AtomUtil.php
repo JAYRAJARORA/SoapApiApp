@@ -17,6 +17,8 @@
  */
 namespace AppBundle\Util;
 
+use AppBundle\Constants\SoapConstants;
+
 /**
  * Class AtomUtil
  *
@@ -38,6 +40,20 @@ class AtomUtil
             throw new \SoapFault(
                 'Server',
                 'No Atom Object Found'
+            );
+        }
+    }
+
+    /**
+     * @param $owner
+     * @param $requestingUser
+     * @throws \SoapFault
+     */
+    public static function checkOwner($owner, $requestingUser) {
+        if (strcmp($owner, $requestingUser)) {
+            throw new \SoapFault(
+                SoapConstants::CLIENT_FAULT_CODE,
+                SoapConstants::REQUEST_DENIED
             );
         }
     }

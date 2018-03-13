@@ -18,6 +18,7 @@
  */
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Atom;
 use AppBundle\Form\AtomType;
 use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -59,7 +60,9 @@ class AtomController extends Controller
         $form = $this->createForm(AtomType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var Atom $atom */
             $atom = $form->getData();
+            $atom->setOwner($user);
             $em = $this->getDoctrine()->getManager();
             $em->persist($atom);
             $em->flush();

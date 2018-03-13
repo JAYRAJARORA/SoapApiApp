@@ -44,6 +44,7 @@ class SoapConstants
     const ATOMIC_NUMBER_EXISTS = 'Atomic Number already exists';
     const KEY_MISSING = 'Some of the required fields are missing';
     const INVALID_XML = 'Invalid Cdata Format in XML';
+    const REQUEST_DENIED = 'Request user is not owner of atom object';
     // Type of fault
     const CLIENT_FAULT_CODE = 'Client';
     const SERVER_FAULT_CODE = 'Server';

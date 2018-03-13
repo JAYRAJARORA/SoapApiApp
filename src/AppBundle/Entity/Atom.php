@@ -87,6 +87,16 @@ class Atom
     private $atomicWeight;
 
     /**
+     * @ORM\ManyToOne(
+     *     targetEntity="AppBundle\Entity\User"
+     * )
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @var User
+     *
+     */
+    private $owner;
+
+    /**
      * Get id
      *
      * @return integer
@@ -186,5 +196,23 @@ class Atom
     public function getAtomicWeight()
     {
         return $this->atomicWeight;
+    }
+
+    /**
+     * Owner of atom
+     * @return User
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * Owner of entity
+     * @param User $owner
+     */
+    public function setOwner(User $owner)
+    {
+        $this->owner = $owner;
     }
 }

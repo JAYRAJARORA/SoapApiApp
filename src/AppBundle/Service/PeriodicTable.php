@@ -37,6 +37,7 @@ class PeriodicTable
     private $em;
     private $logger;
     private $validator;
+    private $username;
 
     /**
      * PeriodicTableUtil constructor.
@@ -61,7 +62,7 @@ class PeriodicTable
      */
     public function checkAuth($header)
     {
-        $this->validator->validateHeader($header, 0);
+        $this->username = $this->validator->validateHeader($header, 0);
     }
     /**
      * Soap Method for fetching atomicNumber
@@ -113,6 +114,7 @@ class PeriodicTable
             array(SoapConstants::ELEMENT_NAME => $elementName)
         );
         AtomUtil::isAtomExist($atom);
+        AtomUtil::checkOwner($atom->getOwner()->getUsername(), $this->username);
 
         return $atom->getAtomicWeight();
     }
@@ -162,7 +164,6 @@ class PeriodicTable
     /**
      * @param $cdata
      * @return string
-     * @throws \Doctrine\ORM\OptimisticLockException
      * @throws \SoapFault
      */
     public function createAtomUsingCData($cdata)
@@ -170,6 +171,8 @@ class PeriodicTable
         libxml_use_internal_errors(true);
 
         $cc = simplexml_load_string(trim($cdata));
+//        print_r($cc);
+//        exit();
         if (!$cc) {
             libxml_clear_errors();
             throw new \SoapFault(
@@ -177,7 +180,7 @@ class PeriodicTable
                 SoapConstants::INVALID_XML
             );
         }
-        $data = json_decode(json_encode($cc), true);
+        $data = (array)($cc);
         $this->logger->debug(
             'CDataSection',
             array($cc->getName() => $data)

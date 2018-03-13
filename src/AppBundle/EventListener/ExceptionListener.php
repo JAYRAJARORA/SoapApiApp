@@ -60,26 +60,5 @@ class ExceptionListener
                 $exception->getMessage()
             )
         );
-
-        // Customizing the response object to display the exception details
-        $response = new Response();
-        $response->setContent($message);
-
-        // HttpExceptionInterface is a special type of exception that
-        // holds status code and header details
-        if ($exception instanceof HttpExceptionInterface) {
-            $response->setStatusCode($exception->getStatusCode());
-            $response->headers->replace($exception->getHeaders());
-        } else {
-            $response->setStatusCode(Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
-        $this->logger->debug(
-            'Exception Response',
-            array(
-                $exception->getMessage(),$exception->getCode()
-            )
-        );
-        // Send the modified response object to the event
-        $event->setResponse($response);
     }
 }
