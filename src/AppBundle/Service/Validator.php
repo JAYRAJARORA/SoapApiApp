@@ -1,19 +1,9 @@
 <?php
 /**
  * Service to validate user entered in header and the input data
- *
- * PHP version 7.0.25
- *
- * LICENSE: This program is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE.
- *
  * @category  Service
  * @package   AppBundle
  * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
- * @copyright 1997-2005 The PHP Group
- * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  */
 namespace AppBundle\Service;
 
@@ -21,7 +11,6 @@ use AppBundle\Entity\Atom;
 use Doctrine\ORM\EntityManager;
 use FOS\UserBundle\Doctrine\UserManager;
 use AppBundle\Constants\SoapConstants;
-use ProxyManager\Factory\RemoteObject\Adapter\Soap;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 
 /**
@@ -30,7 +19,6 @@ use Symfony\Component\Security\Core\Encoder\EncoderFactory;
  * @category Service
  * @package  AppBundle
  * @author   Jayraj Arora <jayraja@mindfiresolutions.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  */
 class Validator
 {
@@ -226,7 +214,7 @@ class Validator
      * Handle CData request coming from the  Create Atom method
      * @param $data
      * @return array
-     * @throws \SoapFault
+     * @throws \Exception
      */
     public function handleCreateAtomRequest($data)
     {

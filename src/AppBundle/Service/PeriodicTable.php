@@ -2,18 +2,9 @@
 /**
  * Service containing all the soap methods to handle requests
  *
- * PHP version 7.0.25
- *
- * LICENSE: This program is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE.
- *
  * @category  Service
  * @package   AppBundle
  * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
- * @copyright 1997-2005 The PHP Group
- * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  */
 namespace AppBundle\Service;
 
@@ -30,7 +21,6 @@ use AppBundle\Util\AtomUtil;
  * @category Service
  * @package  AppBundle
  * @author   Jayraj Arora <jayraja@mindfiresolutions.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  */
 class PeriodicTable
 {
@@ -70,13 +60,14 @@ class PeriodicTable
      * @return string
      * @throws \SoapFault
      */
-    public function getAtomicNumber($elementName)
+    public function getAtomicNumber($elementName, $username = null)
     {
         $this->validator->validateElementName($elementName);
         $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
         $atom = $repo->findOneBy(
             array(SoapConstants::ELEMENT_NAME => $elementName)
         );
+        AtomUtil::checkOwner($atom->getOwner()->getUsername(), ($username ? $username : $this->username));
         AtomUtil::isAtomExist($atom);
 
         return $atom->getAtomicNumber();
@@ -107,14 +98,14 @@ class PeriodicTable
      * @return string
      * @throws \SoapFault
      */
-    public function getAtomicWeight($elementName)
+    public function getAtomicWeight($elementName, $username = null)
     {
         $repo = $this->em->getRepository(SoapConstants::ATOM_REPOSITORY);
         $atom = $repo->findOneBy(
             array(SoapConstants::ELEMENT_NAME => $elementName)
         );
         AtomUtil::isAtomExist($atom);
-        AtomUtil::checkOwner($atom->getOwner()->getUsername(), $this->username);
+        AtomUtil::checkOwner($atom->getOwner()->getUsername(), ($username ? $username : $this->username));
 
         return $atom->getAtomicWeight();
     }

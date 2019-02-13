@@ -4,18 +4,9 @@
  * Request, responses and name of method included in wsdl
  * is given through annotations of actions.
  * Various actions itself handles the incoming request
- *
- * PHP version 7.0.25
- * LICENSE: This program is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE.
- *
  * @category  Controller
  * @package   AppBundle
  * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
- * @copyright 1997-2005 The PHP Group
- * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  */
 namespace AppBundle\Controller;
 
@@ -31,7 +22,6 @@ use AppBundle\Constants\SoapConstants;
  * @category Controller
  * @package  AppBundle
  * @author   Jayraj Arora <jayraja@mindfiresolutions.com>
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
  *
  * Header to verify the user credentials
  * @Soap\Header("checkAuth", phpType="AppBundle\Util\Soap\Header\CheckAuthHeader")
@@ -67,13 +57,12 @@ class BeSimpleSoapController extends Controller
         $this->get(SoapConstants::VALIDATE_REQUEST)->validateElementName($elementName);
 
         // retrieve the atomicNumber
-        $atomicNumber = $this->get('periodic_table')
-            ->getAtomicNumber($elementName);
+        $atomicNumber = $this->get('periodic_table')->getAtomicNumber($elementName, $header->getData()->username);
+
         $status = 'Atom found with element '. $elementName;
 
         // setting appropriate response
-        return $this->get('soap_response')
-            ->getAtomicNumberResponse($atomicNumber, $status);
+        return $this->get('soap_response')->getAtomicNumberResponse($atomicNumber, $status);
     }
 
     /**
@@ -103,12 +92,10 @@ class BeSimpleSoapController extends Controller
         $this->get(SoapConstants::VALIDATE_REQUEST)->validateElementName($elementName);
 
         // retrieve the atomicWeight
-        $atomicWeight = $this->get('periodic_table')
-            ->getAtomicWeight($elementName);
+        $atomicWeight = $this->get('periodic_table')->getAtomicWeight($elementName, $header->getData()->username);
         $status = 'Element found with name '. $elementName;
 
         // setting appropriate response
-        return $this->get('soap_response')
-            ->getAtomicWeightResponse($atomicWeight, $status);
+        return $this->get('soap_response')->getAtomicWeightResponse($atomicWeight, $status);
     }
 }
