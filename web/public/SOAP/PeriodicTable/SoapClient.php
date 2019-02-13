@@ -2,17 +2,6 @@
 /**
  * Soap Client all the soap call to be used. Authentication to be added
  * with the username and password from environment variables
- *
- * PHP version 7.0.25
- * LICENSE: This program is distributed in the hope that it
- * will be useful, but WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY
- * or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * @category  SoapClient
- * @author    Jayraj Arora <jayraja@mindfiresolutions.com>
- * @copyright 1997-2005 The PHP Group
- * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  */
 include __DIR__ . '/../../../../environment.php';
 require_once __DIR__.'/../../../../vendor/autoload.php';

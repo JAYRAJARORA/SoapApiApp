@@ -162,8 +162,6 @@ class PeriodicTable
         libxml_use_internal_errors(true);
 
         $cc = simplexml_load_string(trim($cdata));
-//        print_r($cc);
-//        exit();
         if (!$cc) {
             libxml_clear_errors();
             throw new \SoapFault(

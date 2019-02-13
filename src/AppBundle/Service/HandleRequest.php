@@ -71,6 +71,7 @@ class HandleRequest
                 SoapConstants::CONTENT_TPYE,
                 SoapConstants::XML_CONTENT_VALUE
             );
+            // turn on output buffering
             ob_start();
             $server->handle();
             $response->setContent(ob_get_clean());

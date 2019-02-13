@@ -14,6 +14,7 @@ use FOS\UserBundle\Model\UserInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
@@ -80,9 +81,7 @@ class AtomController extends Controller
     public function serverSoapAction(Request $request)
     {
         if ($request->getMethod() !== 'POST') {
-            throw new AccessDeniedException(
-                SoapConstants::ACCESS_DENIED_TO_URL
-            );
+            return new JsonResponse('403: The request url is unaccessible');
         }
 
         return $this->get('soap_request')->serveRequest();
